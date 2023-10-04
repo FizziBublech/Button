@@ -4,9 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calendly Button</title>
+    <style>
+        /* Basic styling for the button */
+        .calendly-btn {
+            padding: 10px 20px;
+            background-color: #4CAF50; /* Green background */
+            color: white; /* White text */
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+        }
+        
+        .calendly-btn:hover {
+            background-color: #45a049; /* Darker green on hover */
+        }
+    </style>
 </head>
 <body>
-    <!-- Your button code goes here -->
-    
+
+<button class="calendly-btn" onclick="window.open('https://calendly.com/alexander-106/15min', '_blank')">Schedule a Meeting</button>
+
 </body>
 </html>
+
