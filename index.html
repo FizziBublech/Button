@@ -22,21 +22,37 @@
     </style>
 </head>
 <body>
+<!-- Your Voiceflow chat embed code here -->
 
-<button class="calendly-btn" onclick="window.open('https://calendly.com/alexander-106/15min', '_blank')">Schedule a Meeting</button>
-<script type="text/javascript">
-  (function(d, t) {
-      var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
-      v.onload = function() {
-        window.voiceflow.chat.load({
-          verify: { projectID: '651ad23f4c2fe900071473a4' },
-          url: 'https://general-runtime.voiceflow.com',
-          versionID: 'production'
-        });
-      }
-      v.src = "https://cdn.voiceflow.com/widget/bundle.mjs"; v.type = "text/javascript"; s.parentNode.insertBefore(v, s);
-  })(document, 'script');
-</script>
+  <!-- Calendly JavaScript -->
+  <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+
+  <!-- Custom JavaScript to handle the Calendly popup -->
+  <script>
+    // Function to initialize Calendly popup
+    function openCalendly() {
+      Calendly.initPopupWidget({url: 'https://calendly.com/alexander-106/15min'});
+      return false;
+    }
+
+    // This is a generic event listener function. 
+    // Replace this with the actual code for your specific Voiceflow setup.
+    function listenForVoiceflowAction() {
+      // Assume someVoiceflowAPI is an object that represents the Voiceflow API
+      // Assume 'customAction' is an event or method provided by Voiceflow
+      someVoiceflowAPI.on('customAction', function(action) {
+        // Check if the custom action is the one you're interested in
+        if (action.name === 'ShowCalendlyPopup') {
+          openCalendly();
+        }
+      });
+    }
+
+    // Call the function to start listening for Voiceflow custom actions
+    listenForVoiceflowAction();
+  </script>
+
+
 </body>
 </html>
 
