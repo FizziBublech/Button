@@ -23,7 +23,19 @@
 </head>
 <body>
 <!-- Your Voiceflow chat embed code here -->
-
+<script type="text/javascript">
+  (function(d, t) {
+      var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
+      v.onload = function() {
+        window.voiceflow.chat.load({
+          verify: { projectID: '651ad23f4c2fe900071473a4' },
+          url: 'https://general-runtime.voiceflow.com',
+          versionID: 'production'
+        });
+      }
+      v.src = "https://cdn.voiceflow.com/widget/bundle.mjs"; v.type = "text/javascript"; s.parentNode.insertBefore(v, s);
+  })(document, 'script');
+</script>
   <!-- Calendly JavaScript -->
   <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
 
