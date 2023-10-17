@@ -20,62 +20,44 @@
             background-color: #45a049; /* Darker green on hover */
         }
     </style>
+    <link
+    defer
+    rel="stylesheet"
+    type="text/css"
+    href="https://storage.googleapis.com/speakwiz-app.appspot.com/0a4ricbxfj/build/styles.css" />
 </head>
-<body>
-<script type="text/javascript">
-  (function(d, t) {
-      var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
-      v.onload = function() {
-        window.voiceflow.chat.load({
-          verify: { projectID: '651ad23f4c2fe900071473a4' },
-          url: 'https://general-runtime.voiceflow.com',
-          versionID: 'production'
-        });
-      }
-      v.src = "https://cdn.voiceflow.com/widget/bundle.mjs"; v.type = "text/javascript"; s.parentNode.insertBefore(v, s);
-  })(document, 'script');
-
- <style>
-
-    .vfrc-widget--launcher::before {
-
-        content: 'Get help now, try our Ai Chat Bot named Zingbot!';
-        display: block;
-        position: absolute;
-        bottom: calc( 100% + 20px);
-        right: 0;
-        width: 200px;
-        padding: 10px;
-        font-size: 14px;
-        border-radius: 5px;
-        background-color: #484848;
-        color: #ffffff;
-        filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.2));
-
-    }
-
-    .vfrc-widget--launcher::after {
-
-        content: '';
-        display: block;
-        position: absolute;
-        width: 0;
-        height: 0;
-        border-style: solid;
-        border-width: 10px 10px 0;
-        border-color: #484848 transparent transparent transparent;
-        bottom: calc( 100% + 20px);
-        right: 30px;
-        transform: translate(50%, 100%);
-
-    }
-
-</style>
-
-
-
-
+    <div id="VG_OVERLAY_CONTAINER"></div>
+<script defer>
+    window.onload = (event) => {
+        (async function () {
+            // Dynamically load React and React DOM
+            const reactScript = document.createElement("script");
+            reactScript.src =
+                "https://unpkg.com/react@18.2.0/umd/react.production.min.js";
+            document.body.appendChild(reactScript);
+            reactScript.onload = () => {
+                const reactDOMScript = document.createElement("script");
+                reactDOMScript.src =
+                    "https://unpkg.com/react-dom@18.2.0/umd/react-dom.production.min.js";
+                document.body.appendChild(reactDOMScript);
+                reactDOMScript.onload = () => {
+                    const VGLIVESCRIPT = document.createElement("script");
+                    VGLIVESCRIPT.src =
+                        "https://storage.googleapis.com/speakwiz-app.appspot.com/0a4ricbxfj/build/vg_bundle.js";
+                    document.body.appendChild(VGLIVESCRIPT);
+                    VGLIVESCRIPT.onload = () => {
+                        const targetElement = document.getElementById(
+                            "VG_OVERLAY_CONTAINER",
+                        );
+                        const root = ReactDOM.createRoot(targetElement);
+                        root.render(React.createElement(PreBuildChat.default));
+                    };
+                };
+            };
+        })();
+    };
 </script>
+<body>
 
 
 
