@@ -20,49 +20,32 @@
             background-color: #45a049; /* Darker green on hover */
         }
     </style>
+  <!-- START COPY 1 (IN HEAD TAG) -->
     <link
-    defer
-    rel="stylesheet"
-    type="text/css"
-    href="https://storage.googleapis.com/speakwiz-app.appspot.com/0a4ricbxfj/build/styles.css" />
+        defer
+        rel="stylesheet"
+        type="text/css"
+        href="https://storage.googleapis.com/speakwiz-app.appspot.com/r0gkikz3s/build/styles.css" />
+    <!-- END COPY 1 -->
 </head>
     <div id="VG_OVERLAY_CONTAINER"></div>
 
     <body>
-<script type="text/javascript">
-(function(d, t) {
-  var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
-  v.onload = function() {
-    window.voiceflow.chat.load({
-      verify: { projectID: '6501d605f3a13400079e317f' },
-      url: 'https://general-runtime.voiceflow.com',
-      versionID: 'production'
-    });
-  };
-  v.src = "https://cdn.voiceflow.com/widget/bundle.mjs";
-  v.type = "text/javascript";
-  s.parentNode.insertBefore(v, s);
-})(document, 'script');
 
-async function runCode() {
-  const chatbotOpenedBefore = sessionStorage.getItem('chatbotOpened');
-  if (!chatbotOpenedBefore) {
-    let element = document.querySelector(".vfrc-launcher");
-    while (!element) {
-      element = document.querySelector(".vfrc-launcher");
-      await new Promise(resolve => setTimeout(resolve, 1000));
-    }
-    element.click();
-    sessionStorage.setItem('chatbotOpened', 'true'); // Set a session storage flag to remember that the chatbot was opened
-  }
-}
-
-runCode();
-</script>
-
-
-
-
+  
+    
+    <!-- START COPY 2 (RIGHT BEFORE BODY TAG) -->
+    <div style="width: 0; height: 0;" id="VG_OVERLAY_CONTAINER"></div>
+    <script defer>
+        window.onload = (event) => {
+            (async function () {
+                const VG_SCRIPT = document.createElement("script");
+                VG_SCRIPT.src = "https://storage.googleapis.com/speakwiz-app.appspot.com/r0gkikz3s/build/vg_bundle.js";
+                document.body.appendChild(VG_SCRIPT);
+            })();
+        };
+    </script>
+    <!-- END COPY 2 -->   
 </body>
 </html>
 
